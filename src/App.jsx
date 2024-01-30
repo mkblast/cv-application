@@ -24,12 +24,13 @@ function App() {
     <>
       <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} />
 
-      {education.map(e => {
+      {education.map((e, i) => {
         return (
-          <Education key={e.id} {...e} />
+          <Education key={e.id} {...e} index={i} setEducation={setEducation} />
         )
       })}
-      <NewEducation education={education} setEducation={setEducation} />
+
+      <NewEducation setEducation={setEducation} />
     </>
   )
 }

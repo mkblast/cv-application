@@ -1,9 +1,15 @@
-function NewEducation({ education, setEducation }) {
+function NewEducation({ setEducation }) {
   const newField = {
     id: crypto.randomUUID(),
     schoolName: "",
     titleOfStudy: "",
     dateOfStudy: "",
+  }
+
+  function handleChange(newValue) {
+    setEducation(prev =>
+      [...prev, newValue]
+    )
   }
 
   return (
@@ -26,13 +32,13 @@ function NewEducation({ education, setEducation }) {
 
       <div>
         <label> Date of Study
-          <input type="date"
+          <input type="text"
             onChange={e => newField.dateOfStudy = e.target.value}
           />
         </label>
       </div>
 
-      <button onClick={() => setEducation([...education, newField])} >
+      <button onClick={() => handleChange(newField)} >
         Add
       </button>
     </div>
