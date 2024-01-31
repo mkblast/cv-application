@@ -1,14 +1,16 @@
 import { useState } from "react"
 import PersonalInfo from "./components/personal-info"
-import Education from "./components/education"
-import NewEducation from "./components/new-education"
+import Education from "./components/education/education"
+import NewEducation from "./components/education/new-education"
+import Experience from "./components/experience/experience"
+import NewExperience from "./components/experience/new-experience"
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
     fullName: "Karim Mekircha",
     email: "example@email.com",
     phone: "+213 577 888 999",
-    address: "Algeria, Jijel"
+    address: "Algeria, Jijel",
   })
 
   const [education, setEducation] = useState([
@@ -17,6 +19,17 @@ function App() {
       schoolName: "A school",
       titleOfStudy: "IDK what is that",
       dateOfStudy: "2013/06/03",
+    }
+  ])
+
+  const [experience, setExperience] = useState([
+    {
+      id: crypto.randomUUID(),
+      companyName: "DA BUSHES",
+      position: "CEO",
+      responsibilities: "Stuff",
+      from: "2003",
+      until: "2024",
     }
   ])
 
@@ -31,6 +44,14 @@ function App() {
       })}
 
       <NewEducation setEducation={setEducation} />
+
+      {experience.map((e, i) => {
+        return (
+          <Experience key={e.id} {...e} index={i} setExperience={setExperience} />
+        )
+      })}
+
+      <NewExperience setExperience={setExperience} />
     </>
   )
 }
