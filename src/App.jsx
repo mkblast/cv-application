@@ -4,6 +4,7 @@ import Education from "./components/education/education"
 import NewEducation from "./components/education/new-education"
 import Experience from "./components/experience/experience"
 import NewExperience from "./components/experience/new-experience"
+import Form from "./components/display"
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -52,6 +53,8 @@ function App() {
       })}
 
       <NewExperience setExperience={setExperience} />
+
+      <Form personalInfo={personalInfo} education={education} experience={experience} />
     </>
   )
 }
