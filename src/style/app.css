@@ -1,0 +1,26 @@
+.app {
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+  justify-items: center;
+  /* text-align: center; */
+  flex-wrap: wrap;
+}
+
+.display {
+  background-color: #ffffff;
+  border-radius: 0.2em;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  width: 55vw;
+  word-wrap: break-word;
+}
+
+.control {
+}
+
+.info, .experience, .education {
+  border-radius: 0.2em;
+  margin: 1em;
+  background-color: #303030;
+}

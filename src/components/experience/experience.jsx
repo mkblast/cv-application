@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "../../style/experience.css"
+
 function Experience({ companyName, position, responsibilities, from, until, index, setExperience }) {
   const [edit, setEdit] = useState(false);
 

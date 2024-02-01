@@ -1,0 +1,10 @@
+.personal-info {
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-info>* {
+  font-weight: normal;
+  margin: 1em;
+}

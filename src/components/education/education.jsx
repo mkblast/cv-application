@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../style/education.css"
 
 function Education({ schoolName, titleOfStudy, dateOfStudy, index, setEducation }) {
   const [edit, setEdit] = useState(false);
@@ -19,7 +20,7 @@ function Education({ schoolName, titleOfStudy, dateOfStudy, index, setEducation 
 
   if (edit) {
     return (
-      <div>
+      <div className="education">
         <div>
           <label>
             <input type="text"

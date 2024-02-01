@@ -6,6 +6,8 @@ import Experience from "./components/experience/experience"
 import NewExperience from "./components/experience/new-experience"
 import Form from "./components/display"
 
+import "./style/app.css"
+
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
     fullName: "Karim Mekircha",
@@ -35,27 +37,37 @@ function App() {
   ])
 
   return (
-    <>
-      <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} />
+    <div className="app">
+      <div className="control">
+        <div className="info">
+          <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} />
+        </div>
 
-      {education.map((e, i) => {
-        return (
-          <Education key={e.id} {...e} index={i} setEducation={setEducation} />
-        )
-      })}
+        <div className="education"> Education
+          <NewEducation setEducation={setEducation} />
 
-      <NewEducation setEducation={setEducation} />
+          {education.map((e, i) => {
+            return (
+              <Education key={e.id} {...e} index={i} setEducation={setEducation} />
+            )
+          })}
+        </div>
 
-      {experience.map((e, i) => {
-        return (
-          <Experience key={e.id} {...e} index={i} setExperience={setExperience} />
-        )
-      })}
+        <div className="experience"> Experience
+          <NewExperience setExperience={setExperience} />
 
-      <NewExperience setExperience={setExperience} />
+          {experience.map((e, i) => {
+            return (
+              <Experience key={e.id} {...e} index={i} setExperience={setExperience} />
+            )
+          })}
+        </div>
+      </div>
 
-      <Form personalInfo={personalInfo} education={education} experience={experience} />
-    </>
+      <div className="display">
+        <Form personalInfo={personalInfo} education={education} experience={experience} />
+      </div>
+    </div>
   )
 }
 

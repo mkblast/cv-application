@@ -1,0 +1,10 @@
+.experience {
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience>* {
+  font-weight: normal;
+  margin: 1em;
+}

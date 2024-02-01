@@ -1,3 +1,5 @@
+import "../style/personal-info.css"
+
 function PersonalInfo({personalInfo, setPersonalInfo}) {
 
   const handleInputChange = (field, value) => {
@@ -5,7 +7,7 @@ function PersonalInfo({personalInfo, setPersonalInfo}) {
   };
 
   return (
-    <div className="personal-personalInfo"> Personal Details
+    <div className="personal-info"> Personal Details
 
       <div className="name-field" >
         <label> Full name:
@@ -26,7 +28,7 @@ function PersonalInfo({personalInfo, setPersonalInfo}) {
       </div>
 
       <div className="phone-field" >
-        <label> Phone Number:
+        <label> Phone number:
           <input type="tel"
             value={personalInfo.phone}
             onChange={(e) => handleInputChange("phone", e.target.value)}
